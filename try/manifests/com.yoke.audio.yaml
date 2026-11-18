@@ -1,0 +1,60 @@
+manifest: 1
+id: com.yoke.audio
+protocol: 1
+needs:
+  - audio
+streams:
+  - id: audio.status
+  - id: audio.devices
+    tolerates_loss: true
+  - id: audio.streams
+    tolerates_loss: true
+commands:
+  - id: audio.volume.set
+  - id: audio.mute.set
+  - id: audio.default.set
+  - id: audio.stream.move
+queries:
+  - id: audio.status
+  - id: audio.devices
+  - id: audio.streams
+occurrences:
+  - id: audio.device.added
+  - id: audio.device.removed
+capabilities:
+  - name: query.audio.status.answer
+    governs:
+      query: audio.status
+  - name: query.audio.devices.answer
+    governs:
+      query: audio.devices
+  - name: query.audio.streams.answer
+    governs:
+      query: audio.streams
+  - name: command.audio.volume.set.accept
+    governs:
+      command: audio.volume.set
+  - name: command.audio.mute.set.accept
+    governs:
+      command: audio.mute.set
+  - name: command.audio.default.set.accept
+    governs:
+      command: audio.default.set
+  - name: command.audio.stream.move.accept
+    governs:
+      command: audio.stream.move
+  - name: stream.audio.status.publish
+    governs:
+      stream: audio.status
+  - name: stream.audio.devices.publish
+    governs:
+      stream: audio.devices
+  - name: stream.audio.streams.publish
+    governs:
+      stream: audio.streams
+  - name: event.audio.device.added.report
+    governs:
+      occurrence: audio.device.added
+  - name: event.audio.device.removed.report
+    governs:
+      occurrence: audio.device.removed

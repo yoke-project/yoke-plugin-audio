@@ -1,0 +1,8 @@
+plugins:
+  - id: com.yoke.audio
+    unit: audio
+    source: ..
+    tag: null
+    arch: x86_64
+    digest: sha256:ceffabfe0b96a36f18d54ac819e4b1f5435ede2bf8b0bfc971d85d426addd534
+    taken: 2026-11-18T18:47:56Z

@@ -1,0 +1,15 @@
+model: 1
+id: com.yoke.audio-try
+version: 0.1.0
+arch: x86_64
+core: ">=0.16.0"
+channels:
+  panel:
+    transport: local
+    clients: single
+units:
+  audio:
+    kind: plugin
+    plugin: com.yoke.audio
+    exec: components/plugins/audio
+    digest: sha256:ef29962cac7e0e17a801de4caf82dde4bc940cf2c56ea21a1e42c75a72e33d4e
